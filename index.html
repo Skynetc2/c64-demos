@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C64 Demos</title>
+    <script src="path/to/c64-emulator.js"></script>
+</head>
+<body>
+    <h1>C64 Demos</h1>
+    <select id="demo-selector">
+        <!-- Options will be populated with demo files -->
+    </select>
+    <button onclick="runDemo()">Run Demo</button>
+    <div id="emulator-container">
+        <!-- Emulator will render here -->
+    </div>
+
+    <script>
+        function runDemo() {
+            const demoSelector = document.getElementById('demo-selector');
+            const selectedDemo = demoSelector.value;
+            // Code to load and run the selected demo using the emulator
+        }
+    </script>
+</body>
+</html>
