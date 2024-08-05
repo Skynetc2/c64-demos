@@ -4,23 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C64 Demos</title>
-    <script src="path/to/c64-emulator.js"></script>
+    <!-- Include C64 emulator from the GPL-licensed source -->
+    <script src="https://haendel.ddns.net:8443/static/teavm/c64jukebox.vue?teavmFormat=JS"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #emulator-container { margin-top: 20px; }
+    </style>
 </head>
 <body>
     <h1>C64 Demos</h1>
     <select id="demo-selector">
-        <!-- Options will be populated with demo files -->
+        <option value="demo1.prg">Demo 1</option>
+        <option value="demo2.d64">Demo 2</option>
+        <!-- Add more demos as needed -->
     </select>
     <button onclick="runDemo()">Run Demo</button>
-    <div id="emulator-container">
-        <!-- Emulator will render here -->
-    </div>
+    <div id="emulator-container"></div>
+
+    <footer>
+        <p>Emulator provided by <a href="https://haendel.ddns.net:8443/static/teavm/c64jukebox.vue?teavmFormat=JS" target="_blank">C64 Jukebox</a> under GPL License</p>
+    </footer>
 
     <script>
         function runDemo() {
             const demoSelector = document.getElementById('demo-selector');
             const selectedDemo = demoSelector.value;
-            // Code to load and run the selected demo using the emulator
+            const emulatorContainer = document.getElementById('emulator-container');
+
+            // Initialize and run the emulator with the selected demo
+            // Example logic for running a demo using the emulator
+            const emulator = new C64Emulator(); // Hypothetical constructor, replace with actual API
+            emulator.init(emulatorContainer); // Initialize with container
+            emulator.load(`demos/${selectedDemo}`); // Load selected demo
+            emulator.run(); // Run the emulator
         }
     </script>
 </body>
